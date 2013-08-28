@@ -22,6 +22,10 @@
 	</style>
 </head>
 <body>
+<div id="wrapper">
 <h1>Search Results</h1>
+<a href = "inputForm.php">Search Again</a>
+	<div id="results">
+</div>
 </body>
 </html>
