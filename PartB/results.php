@@ -39,6 +39,14 @@
 		$min_ordered = trim($_GET['min_ordered']);
 		$min_price = trim($_GET['min_price']);
 		$max_price = trim($_GET['max_price']);
+$sql = "SELECT wine_name, variety, year, winery_name, region_name, on_hand, qty, price, qty * price AS maths
+				FROM wine, winery, wine_variety, grape_variety, region, inventory, items
+				WHERE wine.winery_id = winery.winery_id AND grape_variety.variety_id = wine_variety.variety_id AND 
+				winery.region_id = region.region_id AND wine.wine_id = items.wine_id AND wine_variety.wine_id = wine.wine_id AND wine.wine_id = inventory.wine_id";
+		
+		//Validation Methods
+		//Check each numeric field: If a number has been entered
+
 </div>
 </body>
 </html>
