@@ -22,5 +22,6 @@
 	</style>
 </head>
 <body>
+<h1>Search Results</h1>
 </body>
 </html>
