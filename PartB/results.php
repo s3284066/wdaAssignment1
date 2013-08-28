@@ -71,6 +71,44 @@ if(!empty($min_stock) && !is_numeric($min_stock) || !empty($min_ordered) && !is_
 			{
 				$sql .= " AND variety = '" . $grape_variety . "'";
 			}
+//Always a Value for years
+				$sql .= " AND year BETWEEN '" . $min_year . "' AND '" . $max_year . "'";
+			if(!empty($min_stock))
+			{
+				$sql .= " AND on_hand <= '" . $min_stock . "'";
+			}
+			if(!empty($min_ordered))
+			{
+				$sql .= " AND qty <= " . $min_ordered . "'";
+			}		 
+			if(!empty($min_price) && !empty($max_price))
+			{
+				$sql .= " AND price BETWEEN '" . $min_price. "' AND '" . $max_price . "'";
+			}
+			else if(!empty($min_price) && empty($max_price)){
+				$sql .= " AND price >= " . $min_price;
+			}
+			else if(empty($min_price) && !empty($max_price)){
+				$sql .= " AND price <= '" . $max_price . "'";
+			}	
+			//Group duplicates
+			$sql .= " GROUP BY wine.wine_id;";		
+			//Includes db.php with all connection attributes defined
+			require_once('db.php');
+			//Connects to connection with db.php variables
+			if (!($connection = mysql_connect(DB_HOST, DB_USER, DB_PW))){
+					die("Could not connect");
+			}	
+			//Selects required Database
+			mysql_select_db(DB_NAME, $connection);
+			//Run the query	
+			$query_result = mysql_query($sql,$connection);
+			//Count Rows Found
+			$resultRows = mysql_num_rows($query_result);
+			//If rows returned is greater then 0 then create and display a table
+			if($resultRows > 0){
+				print "<table width='1000px' border='1'><tr><th>Wine Name</th><th>Variety</th><th>Year</th><th>Winery</th><th>Region</th><th>Oh Hand</th><th>Quantity</th><th>Price</th><th>Revenue</th></tr>";
+				
 </div>
 </body>
 </html>
