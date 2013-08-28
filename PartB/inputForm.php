@@ -25,7 +25,7 @@
 		<tr><td>Region:</td><td>
 		<!-- PHP FOR DROPDOWN BOXES -->
 
-		<?php
+<?php
 		//Includes db.php with all connection attributes defined
 		require_once('db.php');
 		//Connects to connection with db.php variables
@@ -42,7 +42,8 @@
 		while($row = mysql_fetch_array($region_result)){
 		print	'<option value="'. $row['region_name'] .'">' 
 .$row['region_name'] .'</option>';
-		}		print '</select></td><td>Grape Variety:</td><td><select 
+		}
+		print '</select></td><td>Grape Variety:</td><td><select 
 name="grape_variety"><option value="All">All</option>';
 		//Sql Statement for second dropdown box: grape variety.
 		$sql = "SELECT variety from grape_variety";
@@ -75,4 +76,5 @@ year";
 		print '</select></td></tr>';
 		mysql_close($connection);
 		?>
+
 </div> </body> </html>
