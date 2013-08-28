@@ -89,6 +89,6 @@ name = "min_price"/></td>
 		</table>
 		<br />
 		<center><input type = "submit" value = "Search 
-Winestore" /><center>
+Winestore" /></center>
 	</form>
 </div> </body> </html>
