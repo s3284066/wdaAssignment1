@@ -1,4 +1,4 @@
-!DOCTYPE html> <html> <head>
+<!DOCTYPE html> <html> <head>
 	<title>Input Wine Form</title>
 	<style type="text/css">
 		body{
