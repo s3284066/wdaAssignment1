@@ -42,8 +42,7 @@
 		while($row = mysql_fetch_array($region_result)){
 		print	'<option value="'. $row['region_name'] .'">' 
 .$row['region_name'] .'</option>';
-		}
-		print '</select></td><td>Grape Variety:</td><td><select 
+		}		print '</select></td><td>Grape Variety:</td><td><select 
 name="grape_variety"><option value="All">All</option>';
 		//Sql Statement for second dropdown box: grape variety.
 		$sql = "SELECT variety from grape_variety";
