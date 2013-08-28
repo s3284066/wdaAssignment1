@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Search Results</title>
+<title>Results for Winestore:</title>
 	<style type="text/css">
 		body{
 			font-family: Arial, Verdana, Sans-Serif;
