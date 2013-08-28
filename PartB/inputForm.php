@@ -78,5 +78,6 @@ year";
 		?>
 		<tr><td>Min in Stock:</td><td><input type = "text" name 
 = "min_stock"/></td>
-
+			<td>Min Ordered:</td><td><input type = "text" 
+name = "min_ordered" /></td></tr>
 </div> </body> </html>
