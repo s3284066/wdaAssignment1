@@ -76,5 +76,7 @@ year";
 		print '</select></td></tr>';
 		mysql_close($connection);
 		?>
+		<tr><td>Min in Stock:</td><td><input type = "text" name 
+= "min_stock"/></td>
 
 </div> </body> </html>
