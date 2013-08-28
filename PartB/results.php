@@ -46,7 +46,31 @@ $sql = "SELECT wine_name, variety, year, winery_name, region_name, on_hand, qty,
 		
 		//Validation Methods
 		//Check each numeric field: If a number has been entered
-
+if(!empty($min_stock) && !is_numeric($min_stock) || !empty($min_ordered) && !is_numeric($min_ordered) 
+		|| !empty($min_price) && !is_numeric($min_price) || !empty($max_price) && !is_numeric($max_price))
+		{
+			print "Non Numeric character Entered to numeric field";
+		}
+		//Check if Min year is greater then max year
+		else if($min_year > $max_year || !empty($min_price) && !empty($max_price) && $min_price > $max_price){
+			print "Minimum Year Greater then Maximum or Min Price greater then max price";
+		}
+		//No Errors Run the query
+		else{
+			//Conditional Statements to construct the sql query
+			if(!empty($wine_name)){
+				$sql .= " AND wine_name LIKE '%" . $wine_name . "%'";
+			}
+			if(!empty($winery_name)){
+				$sql .= " AND winery_name LIKE '%" . $winery_name . "%'";
+			}
+			if($region_name != 'All'){
+				$sql .= " AND region_name = '" . $region_name . "'";
+			}
+			if($grape_variety != 'All')
+			{
+				$sql .= " AND variety = '" . $grape_variety . "'";
+			}
 </div>
 </body>
 </html>
