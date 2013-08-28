@@ -16,6 +16,15 @@
 	</style> </head> <body>
 	<div id = wrapper>
 	<h1>Search Winestore:</h1>
+<form action="results.php" method="GET">
+		<table border="0">
+		<tr><td>Wine Name:</td><td><input type = "text" name = 
+"wine_name" /></td>
+		<td>Winery Name:</td><td><input type = "text" name = 
+"winery_name" /></td></tr>
+		<tr><td>Region:</td><td>
+		<!-- PHP FOR DROPDOWN BOXES -->
+
 		<?php
 		//Includes db.php with all connection attributes defined
 		require_once('db.php');
