@@ -108,7 +108,30 @@ if(!empty($min_stock) && !is_numeric($min_stock) || !empty($min_ordered) && !is_
 			//If rows returned is greater then 0 then create and display a table
 			if($resultRows > 0){
 				print "<table width='1000px' border='1'><tr><th>Wine Name</th><th>Variety</th><th>Year</th><th>Winery</th><th>Region</th><th>Oh Hand</th><th>Quantity</th><th>Price</th><th>Revenue</th></tr>";
-				
+//While loop to fetch the data
+				while($rows = mysql_fetch_array($query_result)) {
+						print "<tr>"; 
+						print "<td>" . $rows['wine_name'] . "</td>";
+						print "<td>" . $rows['variety'] . "</td>";
+						print "<td>" . $rows['year'] . "</td>";	
+						print "<td>" . $rows['winery_name'] . "</td>";		
+						print "<td>" . $rows['region_name'] . "</td>";		
+						print "<td>" . $rows['on_hand'] . "</td>";		
+						print "<td>" . $rows['qty'] . "</td>";
+						print "<td>$" . $rows['price'] . "</td>";			
+						print "<td>$" . $rows['maths'] . "</td>";		
+						print "</tr>";
+				}
+				print "</table>";
+				print "<br />Returned " . $resultRows . " Rows";
+			}
+			else{
+				print "<br />No Rows Found!";
+			}
+			mysql_close($connection);
+		}
+	?>
+	</div>				
 </div>
 </body>
 </html>
