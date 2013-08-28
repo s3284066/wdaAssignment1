@@ -80,4 +80,12 @@ year";
 = "min_stock"/></td>
 			<td>Min Ordered:</td><td><input type = "text" 
 name = "min_ordered" /></td></tr>
+<tr>
+			<td>Price From:</td><td><input type = "text" 
+name = "min_price"/></td>
+			<td>Price To:</td><td><input type = "text" name 
+= "max_price" /> </td>
+		</tr>
+		</table>
+		<br />
 </div> </body> </html>
